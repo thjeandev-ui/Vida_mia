@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para ti 💙</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(180deg, #0f2027, #203a43, #2c5364);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Georgia', serif;
+      color: #ffffff;
+    }
+
+    .card {
+      width: 90%;
+      max-width: 420px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border-radius: 22px;
+      padding: 26px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 1.6rem;
+      margin-bottom: 18px;
+      letter-spacing: 0.5px;
+    }
+
+    #text {
+      font-size: 1.1rem;
+      line-height: 1.65;
+      white-space: pre-line;
+      min-height: 220px;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1em;
+      background: #ffffff;
+      margin-left: 4px;
+      animation: blink 1s infinite;
+      vertical-align: bottom;
+    }
+
+    @keyframes blink {
+      0%, 50%, 100% { opacity: 1; }
+      25%, 75% { opacity: 0; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <h1>Para ti 💙</h1>
+    <div id="text"></div><span class="cursor"></span>
+  </div>
+
+  <script>
+    const message = `
+Hoy cumplimos ocho meses,
+y mientras escribo esto
+pienso en todo lo que hemos vivido.
+
+No ha sido solo lo bonito,
+sino también lo real.
+Los días en que nos hemos apoyado,
+las conversaciones largas,
+los silencios que también dijeron mucho.
+
+Ocho meses eligiéndonos,
+aprendiendo a caminar juntos,
+entendiendo que el amor
+no es perfección,
+es presencia.
+
+Gracias por quedarte,
+por cuidarme,
+por mirarme con ternura
+incluso cuando no soy fácil de amar.
+
+Contigo aprendí que amar
+también es paciencia,
+es respeto,
+es construir de a poco
+algo que se siente hogar.
+
+No sé qué nos espera más adelante,
+pero sí sé algo con certeza:
+hoy,
+después de todo lo vivido,
+te vuelvo a elegir.
+
+Feliz cumple mes, mi amor.
+Gracias por estos ocho meses.
+Te amo.
+    `;
+
+    const speed = 45;
+    let i = 0;
+
+    function typeWriter() {
+      if (i < message.length) {
+        document.getElementById("text").innerHTML += message.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+
+    typeWriter();
+  </script>
+</body>
+</html>
